@@ -1,9 +1,37 @@
 # Financial-Document-Analyzer
 
-## 🐞 Bugs Found & How I Fixed Them
+Table of Contents
+
+Project Overview
+
+Bugs Encountered and Fixes
+
+Setup Instructions
+
+Usage Instructions
+
+API Documentation
+
+Folder Structure
+
+Project Overview
+
+This system allows users to upload financial PDFs and receive structured analysis including:
+
+Executive Summary
+
+Financial Analysis (Revenue, Profit, Growth Trends)
+
+Risk Assessment
+
+Investment Recommendations
+
+It integrates AI agents with tools for reading PDFs, analyzing financial statements, and assessing risks.
+
+## 1) Bugs Found & How I Fixed Them
 
 ### 1. **requirements.txt Incompatibility**
-- **Problem:** Initial package versions were incompatible with eachother (e.g., CrewAI, CrewAI Tools, FastAPI, LiteLLM, LangChain, google core, ).
+- **Problem:** Initial package versions were incompatible with eachother (e.g., CrewAI, CrewAI Tools, FastAPI, LiteLLM, LangChain, google core).
 - **Fix:** Updated `requirements.txt` to use compatible versions for all dependencies. Verified installation and runtime compatibility.
 
 ### 2. **LLM Provider Not Provided**
@@ -35,3 +63,5 @@
 - **Fix:** Added logging and saved debug info to `outputs/`.
 
 ---
+
+
