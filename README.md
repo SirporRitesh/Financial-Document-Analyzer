@@ -2,29 +2,32 @@
 
 ## Table of Contents
 
-- [Project Overview](#project-overview)
+- [Project Overview](#1-project-overview)
 - [Bugs Encountered and Fixes](#1-bugs-found--how-i-fixed-them)
-- [Setup Instructions](#setup-instructions)
-- [Usage Instructions](#usage-instructions)
-- [API Documentation](#api-documentation)
-- [Folder Structure](#folder-structure)
+- [Setup Instructions](#3-setup-instructions)
+- [Usage Instructions](#4-usage-instructions)
+- [API Documentation](#5-api-documentation)
+- [Folder Structure](#6-folder-structure)
+
+  ---
 
 
-Project Overview
+## 1) Project Overview
 
-This system allows users to upload financial PDFs and receive structured analysis including:
+### This system allows users to upload financial PDFs and receive structured analysis including:
 
-Executive Summary
+### Executive Summary
 
-Financial Analysis (Revenue, Profit, Growth Trends)
+- Financial Analysis (Revenue, Profit, Growth Trends)
 
-Risk Assessment
+- Risk Assessment
 
-Investment Recommendations
+- Investment Recommendations
 
-It integrates AI agents with tools for reading PDFs, analyzing financial statements, and assessing risks.
+### It integrates AI agents with tools for reading PDFs, analyzing financial statements, and assessing risks.
 
-## 1) Bugs Found & How I Fixed Them
+
+## 2) Bugs Found & How I Fixed Them
 
 ### 1. **requirements.txt Incompatibility**
 - **Problem:** Initial package versions were incompatible with eachother (e.g., CrewAI, CrewAI Tools, FastAPI, LiteLLM, LangChain, google core).
@@ -58,6 +61,124 @@ It integrates AI agents with tools for reading PDFs, analyzing financial stateme
 - **Problem:** No persistent logs or debug info.
 - **Fix:** Added logging and saved debug info to `outputs/`.
 
----
+
+# 3) Setup Instructions
+
+- Clone the Repository
+
+```markdown
+git clone https://github.com/SirporRitesh/FinancialDocumentAnalyzer.git
+cd FinancialDocumentAnalyzer
+```
 
 
+- Create a Virtual Environment and Install Dependencies
+
+```markdown
+python -m venv venv
+source venv/bin/activate   # Linux/macOS
+venv\Scripts\activate      # Windows
+pip install -r requirements.txt
+```
+
+
+- Set Environment Variables
+
+- Create a .env file:
+```markdown
+GEMINI_API_KEY=<your_gemini_api_key>
+```
+
+
+- Run the API
+```markdown
+uvicorn main:app --reload
+```
+
+
+- Server runs at http://127.0.0.1:8000/.
+
+
+## 4) Usage Instructions
+
+- Health Check
+  
+```markdown
+GET http://127.0.0.1:8000/
+```
+
+```markdown
+Response:
+
+{
+  "message": "Financial Document Analyzer API is running"
+}
+```
+
+
+- Analyze a PDF
+
+```markdown
+POST http://127.0.0.1:8000/analyze
+Content-Type: multipart/form-data
+Form Fields:
+  file: <your_pdf_file>
+  query: "Analyze this financial document for key metrics and risks"
+```
+
+
+- Response Example:
+
+```markdown
+
+{
+  "status": "success",
+  "query": "Analyze this financial document for key metrics and risks",
+  "analysis": {
+    "executive_summary": "...",
+    "financial_analysis": "...",
+    "risk_assessment": "...",
+    "investment_recommendations": "..."
+  },
+  "file_processed": "sample_compressed.pdf"
+}
+```
+
+
+### Notes:
+
+- Only PDFs up to 10MB are allowed.
+
+- Extracted text is cleaned of hallucinated URLs or fabricated content.
+
+- JSON output is saved in outputs/ folder for debugging and future reference.
+
+## 5) API Documentation
+### Endpoint	Method	Description	Request	Response
+
+- /	GET	Health check	None	{ "message": "API is running" }
+- /analyze	POST	Analyze PDF document	file: UploadFile, query: str	Structured analysis JSON
+
+### Structured Analysis Fields:
+
+- executive_summary: Overall assessment or summary.
+
+- financial_analysis: Revenue, profit, and financial metrics.
+
+- risk_assessment: Identified risks and mitigation strategies.
+
+- investment_recommendations: Evidence-based recommendations.
+
+## 6) Folder Structure
+```markdown
+FinancialDocumentAnalyzer/
+├─ data/                 # Temporary storage for uploaded PDFs
+├─ outputs/              # Structured JSON results and debug info
+├─ tools/                # PDF reading and analysis tools
+├─ agents.py             # CrewAI agent definitions
+├─ task.py               # Task definitions for CrewAI
+├─ main.py               # FastAPI backend
+├─ requirements.txt
+├─ README.md
+
+```
