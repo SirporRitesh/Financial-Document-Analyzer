@@ -3,7 +3,7 @@
 ## Table of Contents
 
 - [Project Overview](#project-overview)
-- [Bugs Encountered and Fixes](#bugs-encountered-and-fixes)
+- [Bugs Encountered and Fixes](#1-bugs-found--how-i-fixed-them)
 - [Setup Instructions](#setup-instructions)
 - [Usage Instructions](#usage-instructions)
 - [API Documentation](#api-documentation)
