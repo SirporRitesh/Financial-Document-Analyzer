@@ -1,18 +1,14 @@
 # Financial-Document-Analyzer
 
-Table of Contents
+## Table of Contents
 
-Project Overview
+- [Project Overview](#project-overview)
+- [Bugs Encountered and Fixes](#bugs-encountered-and-fixes)
+- [Setup Instructions](#setup-instructions)
+- [Usage Instructions](#usage-instructions)
+- [API Documentation](#api-documentation)
+- [Folder Structure](#folder-structure)
 
-Bugs Encountered and Fixes
-
-Setup Instructions
-
-Usage Instructions
-
-API Documentation
-
-Folder Structure
 
 Project Overview
 
