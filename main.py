@@ -54,7 +54,7 @@ async def root():
 @app.post("/analyze")
 async def analyze_financial_document(
     file: UploadFile = File(...),
-    query: str = Form(default="Analyze this financial document for investment insights")
+    query: str = Form(default="Analyze this financial document for investment insights. Return your answer as plain text only, without any formatting, bullet points, or markdown.")
 ):
     """Analyze financial document and provide comprehensive investment recommendations"""
     
