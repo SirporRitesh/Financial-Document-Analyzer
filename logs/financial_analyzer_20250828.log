@@ -1,0 +1,31 @@
+2025-08-28 17:42:30 - financial_analyzer - INFO - Processing request - File ID: 25901c30-baaf-4172-b305-b2159c0574ca
+2025-08-28 17:42:30 - financial_analyzer - INFO - Original filename: fs023-sample-financial-statements.pdf
+2025-08-28 17:42:30 - financial_analyzer - INFO - File size: 285,850 bytes (0.27 MB)
+2025-08-28 17:42:30 - financial_analyzer - INFO - Content type: application/pdf
+2025-08-28 17:42:30 - financial_analyzer - INFO - Query length: 57 characters
+2025-08-28 17:42:30 - financial_analyzer - INFO - Query preview: Analyze this financial document for key metrics and risks
+2025-08-28 17:42:30 - financial_analyzer - INFO - File saved successfully - 25901c30-baaf-4172-b305-b2159c0574ca: data/financial_document_25901c30-baaf-4172-b305-b2159c0574ca.pdf
+2025-08-28 17:42:30 - financial_analyzer - INFO - PDF processed and encoded - 25901c30-baaf-4172-b305-b2159c0574ca: 381,136 base64 chars
+2025-08-28 17:42:30 - financial_analyzer - INFO - Calling Gemini API - 25901c30-baaf-4172-b305-b2159c0574ca
+2025-08-28 17:42:30 - LiteLLM - INFO - 
+LiteLLM completion() model= gemini-2.0-flash; provider = gemini
+2025-08-28 17:42:46 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyDB1kKM-POmNiMCvNlJJJfdo5s1a4TEJa8 "HTTP/1.1 200 OK"
+2025-08-28 17:42:46 - LiteLLM - INFO - Wrapper: Completed Call, calling success_handler
+2025-08-28 17:42:46 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.0-flash
+2025-08-28 17:42:46 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.0-flash
+2025-08-28 17:42:46 - LiteLLM - INFO - selected model name for cost calculation: gemini/gemini-2.0-flash
+2025-08-28 17:42:46 - financial_analyzer - INFO - Gemini API response received - 25901c30-baaf-4172-b305-b2159c0574ca
+2025-08-28 17:42:46 - financial_analyzer - INFO - Response metadata - 25901c30-baaf-4172-b305-b2159c0574ca: {
+  "response_length": 5477,
+  "finish_reason": "stop",
+  "tokens": {
+    "prompt_tokens": 1815,
+    "completion_tokens": 1419,
+    "total_tokens": 3234
+  },
+  "model": "gemini-2.0-flash",
+  "response_time_ms": 15686.122
+}
+2025-08-28 17:42:46 - financial_analyzer - INFO - Debug info saved to: outputs/debug_25901c30-baaf-4172-b305-b2159c0574ca.json
+2025-08-28 17:42:46 - financial_analyzer - INFO - Request processed successfully - 25901c30-baaf-4172-b305-b2159c0574ca
+2025-08-28 17:42:46 - financial_analyzer - INFO - Cleanup completed - 25901c30-baaf-4172-b305-b2159c0574ca: data/financial_document_25901c30-baaf-4172-b305-b2159c0574ca.pdf removed
