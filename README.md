@@ -26,6 +26,8 @@
 
 ### It integrates AI agents with tools for reading PDFs, analyzing financial statements, and assessing risks.
 
+---
+
 
 ## 2) Bugs Found & How I Fixed Them
 
@@ -60,6 +62,8 @@
 ### 8. **Logging & Debugging**
 - **Problem:** No persistent logs or debug info.
 - **Fix:** Added logging and saved debug info to `outputs/`.
+
+  ---
 
 
 # 3) Setup Instructions
@@ -97,6 +101,8 @@ uvicorn main:app --reload
 
 
 - Server runs at http://127.0.0.1:8000/.
+
+  ---
 
 
 ## 4) Usage Instructions
@@ -153,6 +159,8 @@ Form Fields:
 
 - JSON output is saved in outputs/ folder for debugging and future reference.
 
+  ---
+
 ## 5) API Documentation
 ### Endpoint	Method	Description	Request	Response
 
@@ -168,6 +176,8 @@ Form Fields:
 - risk_assessment: Identified risks and mitigation strategies.
 
 - investment_recommendations: Evidence-based recommendations.
+
+  ---
 
 ## 6) Folder Structure
 ```markdown
